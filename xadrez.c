@@ -1,32 +1,106 @@
 #include <stdio.h>
 
-// Desafio de Xadrez - MateCheck
-// Este código inicial serve como base para o desenvolvimento do sistema de movimentação das peças de xadrez.
-// O objetivo é utilizar estruturas de repetição e funções para determinar os limites de movimentação dentro do jogo.
+int main (){
+    //variaves
+    int opcao;
 
-int main() {
-    // Nível Novato - Movimentação das Peças
-    // Sugestão: Declare variáveis constantes para representar o número de casas que cada peça pode se mover.
+    //Variaveis Torre
+    int movimento_torre, torre;
+    
+    //Variaveis Bispo
+    int movimento_bispo, bispo = 0;
 
-    // Implementação de Movimentação do Bispo
-    // Sugestão: Utilize uma estrutura de repetição para simular a movimentação do Bispo em diagonal.
+    //Variaveis Rainha
+    int movimento_rainha, rainha = 0;
+    
+    //Menu
+    printf("===ESCOLHA UMA PECA===\n");
+    printf("Torre[1]\nBispo[2]\nRainha[3]\n");
+    printf(">");
+    scanf("%d", &opcao);
 
-    // Implementação de Movimentação da Torre
-    // Sugestão: Utilize uma estrutura de repetição para simular a movimentação da Torre para a direita.
+    //Opcao Torre
+    if (opcao == 1)
+    {
+        printf("Mover a torre Verticalmente(1) ou mover Horizontalmente(2)\n");
+        printf(">");
+        scanf("%d", &movimento_torre);
 
-    // Implementação de Movimentação da Rainha
-    // Sugestão: Utilize uma estrutura de repetição para simular a movimentação da Rainha para a esquerda.
+        //Movimento da peça torre verticalmente
+        if (movimento_torre == 1){
+            for (int torre = 0; torre <= 7; torre++)
+            {
+            printf("Percorrendo Verticalmente(%d)\n", torre);
+            }
 
-    // Nível Aventureiro - Movimentação do Cavalo
-    // Sugestão: Utilize loops aninhados para simular a movimentação do Cavalo em L.
-    // Um loop pode representar a movimentação horizontal e outro vertical.
+        //Movimento da peça torre horizontalmente 
+        }else{
+            for (int torre = 0; torre <= 7; torre++)
+            {
+                printf("Percorrendo horizontalmente(%d)\n", torre);
+            }
+        }
 
-    // Nível Mestre - Funções Recursivas e Loops Aninhados
-    // Sugestão: Substitua as movimentações das peças por funções recursivas.
-    // Exemplo: Crie uma função recursiva para o movimento do Bispo.
+    //Opcao Bispo
+    } else if (opcao == 2)
+    {
+        printf("Mover verticalmente para Esquerda(1) ou Direita(2)\n");
+        printf(">");
+        scanf("%d", &movimento_bispo);
 
-    // Sugestão: Implemente a movimentação do Cavalo utilizando loops com variáveis múltiplas e condições avançadas.
-    // Inclua o uso de continue e break dentro dos loops.
+        //Movimento da peçaa bispo para esquerda
+        if (movimento_bispo == 1)
+        {
+            while (bispo <= 2)
+            {
+                printf("Percorrendo verticalmente para esquerda(%d)\n", bispo);
+                bispo++;
+            }
 
-    return 0;
+        //Movimento da peça bispo para direita
+        } else{
+            while (bispo <= 5)
+            {
+                printf("Percorrendo verticalmente para direita(%d)\n", bispo);
+                bispo++;
+            }
+        }
+
+    //Opcao Rainha
+    } else if (opcao == 3)
+    {
+        printf("Mover para Frente(1), Verticalmente para Esquerda(2) ou Direita(3)\n");
+        printf(">");
+        scanf("%d", movimento_rainha);
+
+
+        //Movimento rainha para frente
+        if (movimento_rainha == 1)
+        {
+            do{
+                printf("Percorrendo para Frente(%d)\n");
+                rainha++;
+            }while (rainha <= 7);
+        
+        //Movimento rainha verticalmente para esquerda
+        } else if (movimento_rainha == 2)
+        {
+            do{
+                printf("Percorrendo Verticalmente para esquerda(%d)\n", rainha);
+                rainha++;
+            }while(rainha <= 3);
+        
+        //Movimento rainha verticalmente para direita
+        } else {
+            do {
+                printf("Percorrendo Verticalmente para direita (%d)\n", rainha);
+                rainha++;
+            }while (rainha <= 4);
+        }
+        
+    //opcao invalida
+    } else {
+        printf("Opcao invalida, Tente novamente\n");
+    }
+    
 }
