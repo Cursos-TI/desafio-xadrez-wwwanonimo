@@ -105,5 +105,6 @@ int main (){
     } else {
         printf("Opcao invalida, Tente novamente\n");
     }
-    
+
+    return 0;
 }
