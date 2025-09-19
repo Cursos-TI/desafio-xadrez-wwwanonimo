@@ -8,10 +8,10 @@ int main (){
     int movimento_torre, torre;
     
     //Variaveis Bispo
-    int movimento_bispo, bispo = 0;
+    int movimento_bispo, bispo = 1;
 
     //Variaveis Rainha
-    int movimento_rainha, rainha = 0;
+    int movimento_rainha, rainha = 1;
     
     //Menu
     printf("===ESCOLHA UMA PECA===\n");
@@ -35,7 +35,7 @@ int main (){
 
         //Movimento da peça torre horizontalmente 
         }else{
-            for (int torre = 0; torre <= 7; torre++)
+            for (int torre = 1; torre <= 7; torre++)
             {
                 printf("Percorrendo horizontalmente(%d)\n", torre);
             }
@@ -71,27 +71,30 @@ int main (){
     {
         printf("Mover para Frente(1), Verticalmente para Esquerda(2) ou Direita(3)\n");
         printf(">");
-        scanf("%d", movimento_rainha);
+        scanf("%d", &movimento_rainha);
 
 
         //Movimento rainha para frente
         if (movimento_rainha == 1)
         {
-            do{
-                printf("Percorrendo para Frente(%d)\n");
+            
+            do {
+                printf("Percorrendo para Frente(%d)\n", rainha);
                 rainha++;
             }while (rainha <= 7);
         
         //Movimento rainha verticalmente para esquerda
         } else if (movimento_rainha == 2)
         {
-            do{
+            
+            do {
                 printf("Percorrendo Verticalmente para esquerda(%d)\n", rainha);
                 rainha++;
             }while(rainha <= 3);
         
         //Movimento rainha verticalmente para direita
         } else {
+            
             do {
                 printf("Percorrendo Verticalmente para direita (%d)\n", rainha);
                 rainha++;
